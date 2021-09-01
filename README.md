@@ -1,7 +1,9 @@
 # Become a Back-End Developer Expert
-- Case Study Clean Architecture + TDD: Building an Auth API.
 
-## Anatomy of the auth-api project
+## Case Study Clean Architecture + TDD: Building an Auth API.
+- Build API Authentication API (Auth API) projects. This fire focuses on managing authentication features. Auth API can serve user registration requests, login (Get Authentication), Refresh Authentication, and Logout (Delete Authentication).
+
+### Anatomy of the auth-api project
 auth-api/                   → Root Proyek.
 ├─ config/                  → Folder konfigurasi, digunakan untuk mengonfigurasi node-pg-migrate pada database testing.
 ├─ migrations/              → Berkas migrations database.
