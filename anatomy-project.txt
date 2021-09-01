@@ -1,7 +1,5 @@
-# Become a Back-End Developer Expert
-- Case Study Clean Architecture + TDD: Building an Auth API.
-
 ## Anatomy of the auth-api project
+
 auth-api/                   → Root Proyek.
 ├─ config/                  → Folder konfigurasi, digunakan untuk mengonfigurasi node-pg-migrate pada database testing.
 ├─ migrations/              → Berkas migrations database.
