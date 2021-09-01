@@ -1,7 +1,7 @@
 # Become a Back-End Developer Expert
 
-## Case Study Clean Architecture + TDD: Building an Auth API.
-- Build API Authentication API (Auth API) projects. This fire focuses on managing authentication features. Auth API can serve user registration requests, login (Get Authentication), Refresh Authentication, and Logout (Delete Authentication).
+## Case Study Clean Architecture + TDD: Building an Auth API
+Build API Authentication API (Auth API) projects. This fire focuses on managing authentication features. Auth API can serve user registration requests, login (Get Authentication), Refresh Authentication, and Logout (Delete Authentication).
 
 ### Anatomy of the auth-api project
 auth-api/                   → Root Proyek.
@@ -14,8 +14,8 @@ auth-api/                   → Root Proyek.
 │  ├─ Commons/              → Shared folder.
 │  │  ├─ exceptions/        → Custom exceptions.
 │  ├─ Domains/              → Enterprise Business Rules.
-│  │  ├─ authentications/   → Subdomain authentications, di sini berisi domain model (entities) dan abstraksi/interface AuthenticationRepository .
-│  │  ├─ users/             → Subdomain users, di sini berisi domain model (entities) dan abstraksi/interface UserRepository.
+│  │  ├─ authentications/   → Subdomain authentications, di sini berisi domain model(entities) dan abstraksi/interface AuthenticationRepository .
+│  │  ├─ users/             → Subdomain users, di sini berisi domain model(entities) dan abstraksi/interface UserRepository.
 │  ├─ Infrastructures/      → Agen External seperti Framework dan Tools External.
 │  │  ├─ database/          → Driver database.
 │  │  ├─ http/              → HTTP Server menggunakan Hapi.js.
