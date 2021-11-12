@@ -9,7 +9,6 @@ describe('UserRepositoryPostgres', () => {
   afterEach(async () => {
     await UsersTableTestHelper.cleanTable();
   });
-
   afterAll(async () => {
     await pool.end();
   });
