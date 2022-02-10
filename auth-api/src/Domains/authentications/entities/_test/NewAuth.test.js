@@ -36,5 +36,5 @@ describe('NewAuth entities', () => {
     expect(newAuth).toBeInstanceOf(NewAuth);
     expect(newAuth.accessToken).toEqual(payload.accessToken);
     expect(newAuth.refreshToken).toEqual(payload.refreshToken);
-  })
+  });
 });

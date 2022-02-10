@@ -7,6 +7,7 @@ describe('AuthenticationRepository postgres', () => {
   afterEach(async () => {
     await AuthenticationsTableTestHelper.cleanTable();
   });
+
   afterAll(async () => {
     await pool.end();
   });
@@ -16,8 +17,10 @@ describe('AuthenticationRepository postgres', () => {
       // Arrange
       const authenticationRepository = new AuthenticationRepositoryPostgres(pool);
       const token = 'token';
+
       // Action
       await authenticationRepository.addToken(token);
+
       // Assert
       const tokens = await AuthenticationsTableTestHelper.findToken(token);
       expect(tokens).toHaveLength(1);

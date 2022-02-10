@@ -1,5 +1,8 @@
 class RefreshAuthenticationUseCase {
-  constructor({ authenticationRepository, authenticationTokenManager, }) {
+  constructor({
+    authenticationRepository,
+    authenticationTokenManager,
+  }) {
     this._authenticationRepository = authenticationRepository;
     this._authenticationTokenManager = authenticationTokenManager;
   }
@@ -11,9 +14,9 @@ class RefreshAuthenticationUseCase {
     await this._authenticationTokenManager.verifyRefreshToken(refreshToken);
     await this._authenticationRepository.checkAvailabilityToken(refreshToken);
 
-    const { username, id } = await this._authenticationTokenManager.decodePayload(refreshToken);
+    const { username } = await this._authenticationTokenManager.decodePayload(refreshToken);
 
-    return this._authenticationTokenManager.createAccessToken({ username, id });
+    return this._authenticationTokenManager.createAccessToken({ username });
   }
 
   _verifyPayload(payload) {

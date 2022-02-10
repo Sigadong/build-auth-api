@@ -18,12 +18,11 @@ const BcryptPasswordHash = require('./security/BcryptPasswordHash');
 const AddUserUseCase = require('../Applications/use_case/AddUserUseCase');
 const AuthenticationTokenManager = require('../Applications/security/AuthenticationTokenManager');
 const JwtTokenManager = require('./security/JwtTokenManager');
-// const LoginUserUseCase = require('../Applications/use_case/LoginUserUseCase');
+const LoginUserUseCase = require('../Applications/use_case/LoginUserUseCase');
 const AuthenticationRepository = require('../Domains/authentications/AuthenticationRepository');
 const AuthenticationRepositoryPostgres = require('./repository/AuthenticationRepositoryPostgres');
-// const LogoutUserUseCase = require('../Applications/use_case/LogoutUserUseCase');
+const LogoutUserUseCase = require('../Applications/use_case/LogoutUserUseCase');
 const RefreshAuthenticationUseCase = require('../Applications/use_case/RefreshAuthenticationUseCase');
-
 
 // creating container
 const container = createContainer();
@@ -98,44 +97,44 @@ container.register([
       ],
     },
   },
-  // {
-  //   key: LoginUserUseCase.name,
-  //   Class: LoginUserUseCase,
-  //   parameter: {
-  //     injectType: 'destructuring',
-  //     dependencies: [
-  //       {
-  //         name: 'userRepository',
-  //         internal: UserRepository.name,
-  //       },
-  //       {
-  //         name: 'authenticationRepository',
-  //         internal: AuthenticationRepository.name,
-  //       },
-  //       {
-  //         name: 'authenticationTokenManager',
-  //         internal: AuthenticationTokenManager.name,
-  //       },
-  //       {
-  //         name: 'passwordHash',
-  //         internal: PasswordHash.name,
-  //       },
-  //     ],
-  //   },
-  // },
-  // {
-  //   key: LogoutUserUseCase.name,
-  //   Class: LogoutUserUseCase,
-  //   parameter: {
-  //     injectType: 'destructuring',
-  //     dependencies: [
-  //       {
-  //         name: 'authenticationRepository',
-  //         internal: AuthenticationRepository.name,
-  //       },
-  //     ],
-  //   },
-  // },
+  {
+    key: LoginUserUseCase.name,
+    Class: LoginUserUseCase,
+    parameter: {
+      injectType: 'destructuring',
+      dependencies: [
+        {
+          name: 'userRepository',
+          internal: UserRepository.name,
+        },
+        {
+          name: 'authenticationRepository',
+          internal: AuthenticationRepository.name,
+        },
+        {
+          name: 'authenticationTokenManager',
+          internal: AuthenticationTokenManager.name,
+        },
+        {
+          name: 'passwordHash',
+          internal: PasswordHash.name,
+        },
+      ],
+    },
+  },
+  {
+    key: LogoutUserUseCase.name,
+    Class: LogoutUserUseCase,
+    parameter: {
+      injectType: 'destructuring',
+      dependencies: [
+        {
+          name: 'authenticationRepository',
+          internal: AuthenticationRepository.name,
+        },
+      ],
+    },
+  },
   {
     key: RefreshAuthenticationUseCase.name,
     Class: RefreshAuthenticationUseCase,
